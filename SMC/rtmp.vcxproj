@@ -207,8 +207,9 @@ mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
+)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -245,8 +246,9 @@ mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
+)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
@@ -284,8 +286,9 @@ mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
+)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
@@ -323,8 +326,9 @@ mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
+)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -375,8 +379,9 @@ mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
+)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -427,8 +432,9 @@ mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
+)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
@@ -478,8 +484,9 @@ mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
+)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
@@ -529,8 +536,9 @@ mkdir $(OutputPath)\licenses
 copy ..\COPYING $(OutputPath)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
+)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
