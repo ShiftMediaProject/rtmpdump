@@ -136,41 +136,41 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <TargetName>rtmpd</TargetName>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <TargetName>rtmpd</TargetName>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc64\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <TargetName>rtmp</TargetName>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <TargetName>rtmp</TargetName>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc64\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>librtmpd</TargetName>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>librtmpd</TargetName>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc64\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetName>librtmp</TargetName>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>librtmp</TargetName>
-    <OutDir>..\..\..\</OutDir>
+    <OutDir>..\..\..\msvc64\</OutDir>
     <IntDir>$(ProjectDir)\obj\$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -181,7 +181,7 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;USE_OPENSSL;_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4996;4005;4018</DisableSpecificWarnings>
@@ -192,23 +192,23 @@
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\lib\msvc32\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalDependencies>libopenssld.lib;libzd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\lib\msvc32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-mkdir $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\rtmp.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\amf.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\http.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\log.h $(OutDir)\include\msvc\librtmp
+      <Command>mkdir $(OutDir)\include
+mkdir $(OutDir)\include\librtmp
+copy ..\librtmp\rtmp.h $(OutDir)\include\librtmp
+copy ..\librtmp\amf.h $(OutDir)\include\librtmp
+copy ..\librtmp\http.h $(OutDir)\include\librtmp
+copy ..\librtmp\log.h $(OutDir)\include\librtmp
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if exist $(OutDir)\include\msvc\librtmp (
-rd /s /q $(OutDir)\include\msvc\librtmp
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -220,7 +220,7 @@ rd /s /q $(OutDir)\include\msvc\librtmp
       <PreprocessorDefinitions>WIN32;_WINDOWS;USE_OPENSSL;_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4996;4005;4018</DisableSpecificWarnings>
@@ -231,23 +231,23 @@ rd /s /q $(OutDir)\include\msvc\librtmp
     <Lib>
       <TargetMachine>MachineX64</TargetMachine>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\lib\msvc64\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalDependencies>libopenssld.lib;libzd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\lib\msvc64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-mkdir $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\rtmp.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\amf.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\http.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\log.h $(OutDir)\include\msvc\librtmp
+      <Command>mkdir $(OutDir)\include
+mkdir $(OutDir)\include\librtmp
+copy ..\librtmp\rtmp.h $(OutDir)\include\librtmp
+copy ..\librtmp\amf.h $(OutDir)\include\librtmp
+copy ..\librtmp\http.h $(OutDir)\include\librtmp
+copy ..\librtmp\log.h $(OutDir)\include\librtmp
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if exist $(OutDir)\include\msvc\librtmp (
-rd /s /q $(OutDir)\include\msvc\librtmp
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -259,7 +259,7 @@ rd /s /q $(OutDir)\include\msvc\librtmp
       <PreprocessorDefinitions>WIN32;_WINDOWS;USE_OPENSSL;_USRDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4996;4005;4018</DisableSpecificWarnings>
@@ -267,27 +267,27 @@ rd /s /q $(OutDir)\include\msvc\librtmp
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\bin\msvc32\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\lib\msvc32\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc32\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc32\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <AdditionalDependencies>openssld.lib;zlibd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\lib\msvc32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-mkdir $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\rtmp.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\amf.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\http.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\log.h $(OutDir)\include\msvc\librtmp
+      <Command>mkdir $(OutDir)\include
+mkdir $(OutDir)\include\librtmp
+copy ..\librtmp\rtmp.h $(OutDir)\include\librtmp
+copy ..\librtmp\amf.h $(OutDir)\include\librtmp
+copy ..\librtmp\http.h $(OutDir)\include\librtmp
+copy ..\librtmp\log.h $(OutDir)\include\librtmp
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if exist $(OutDir)\include\msvc\librtmp (
-rd /s /q $(OutDir)\include\msvc\librtmp
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -299,7 +299,7 @@ rd /s /q $(OutDir)\include\msvc\librtmp
       <PreprocessorDefinitions>WIN32;_WINDOWS;USE_OPENSSL;_USRDLL;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4996;4005;4018</DisableSpecificWarnings>
@@ -307,27 +307,27 @@ rd /s /q $(OutDir)\include\msvc\librtmp
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\bin\msvc64\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\lib\msvc64\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc64\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc64\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <AdditionalDependencies>openssld.lib;zlibd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\lib\msvc64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-mkdir $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\rtmp.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\amf.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\http.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\log.h $(OutDir)\include\msvc\librtmp
+      <Command>mkdir $(OutDir)\include
+mkdir $(OutDir)\include\librtmp
+copy ..\librtmp\rtmp.h $(OutDir)\include\librtmp
+copy ..\librtmp\amf.h $(OutDir)\include\librtmp
+copy ..\librtmp\http.h $(OutDir)\include\librtmp
+copy ..\librtmp\log.h $(OutDir)\include\librtmp
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if exist $(OutDir)\include\msvc\librtmp (
-rd /s /q $(OutDir)\include\msvc\librtmp
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -350,7 +350,7 @@ rd /s /q $(OutDir)\include\msvc\librtmp
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4996;4005;4018</DisableSpecificWarnings>
     </ClCompile>
@@ -364,23 +364,23 @@ rd /s /q $(OutDir)\include\msvc\librtmp
     </Lib>
     <Lib>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\lib\msvc32\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalDependencies>libopenssl.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\lib\msvc32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-mkdir $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\rtmp.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\amf.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\http.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\log.h $(OutDir)\include\msvc\librtmp
+      <Command>mkdir $(OutDir)\include
+mkdir $(OutDir)\include\librtmp
+copy ..\librtmp\rtmp.h $(OutDir)\include\librtmp
+copy ..\librtmp\amf.h $(OutDir)\include\librtmp
+copy ..\librtmp\http.h $(OutDir)\include\librtmp
+copy ..\librtmp\log.h $(OutDir)\include\librtmp
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if exist $(OutDir)\include\msvc\librtmp (
-rd /s /q $(OutDir)\include\msvc\librtmp
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -403,7 +403,7 @@ rd /s /q $(OutDir)\include\msvc\librtmp
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4996;4005;4018</DisableSpecificWarnings>
     </ClCompile>
@@ -417,23 +417,23 @@ rd /s /q $(OutDir)\include\msvc\librtmp
     </Lib>
     <Lib>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\lib\msvc64\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)\lib\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalDependencies>libopenssl.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\lib\msvc64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-mkdir $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\rtmp.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\amf.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\http.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\log.h $(OutDir)\include\msvc\librtmp
+      <Command>mkdir $(OutDir)\include
+mkdir $(OutDir)\include\librtmp
+copy ..\librtmp\rtmp.h $(OutDir)\include\librtmp
+copy ..\librtmp\amf.h $(OutDir)\include\librtmp
+copy ..\librtmp\http.h $(OutDir)\include\librtmp
+copy ..\librtmp\log.h $(OutDir)\include\librtmp
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if exist $(OutDir)\include\msvc\librtmp (
-rd /s /q $(OutDir)\include\msvc\librtmp
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -456,7 +456,7 @@ rd /s /q $(OutDir)\include\msvc\librtmp
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4996;4005;4018</DisableSpecificWarnings>
     </ClCompile>
@@ -465,27 +465,27 @@ rd /s /q $(OutDir)\include\msvc\librtmp
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\bin\msvc32\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\lib\msvc32\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc32\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc32\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <AdditionalDependencies>openssl.lib;zlib.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\lib\msvc32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-mkdir $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\rtmp.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\amf.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\http.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\log.h $(OutDir)\include\msvc\librtmp
+      <Command>mkdir $(OutDir)\include
+mkdir $(OutDir)\include\librtmp
+copy ..\librtmp\rtmp.h $(OutDir)\include\librtmp
+copy ..\librtmp\amf.h $(OutDir)\include\librtmp
+copy ..\librtmp\http.h $(OutDir)\include\librtmp
+copy ..\librtmp\log.h $(OutDir)\include\librtmp
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if exist $(OutDir)\include\msvc\librtmp (
-rd /s /q $(OutDir)\include\msvc\librtmp
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -508,7 +508,7 @@ rd /s /q $(OutDir)\include\msvc\librtmp
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include\msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;.\;$(OutDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <DisableSpecificWarnings>4996;4005;4018</DisableSpecificWarnings>
     </ClCompile>
@@ -517,27 +517,27 @@ rd /s /q $(OutDir)\include\msvc\librtmp
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>$(OutDir)\bin\msvc64\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\lib\msvc64\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\msvc64\$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)\bin\$(TargetName)$(TargetExt)</OutputFile>
+      <ImportLibrary>$(OutDir)\lib\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\bin\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\msvc64\$(TargetName).pgd</ProfileGuidedDatabase>
+      <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <AdditionalDependencies>openssl.lib;zlib.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\lib\msvc64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OutDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>mkdir $(OutDir)\include\msvc
-mkdir $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\rtmp.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\amf.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\http.h $(OutDir)\include\msvc\librtmp
-copy ..\librtmp\log.h $(OutDir)\include\msvc\librtmp
+      <Command>mkdir $(OutDir)\include
+mkdir $(OutDir)\include\librtmp
+copy ..\librtmp\rtmp.h $(OutDir)\include\librtmp
+copy ..\librtmp\amf.h $(OutDir)\include\librtmp
+copy ..\librtmp\http.h $(OutDir)\include\librtmp
+copy ..\librtmp\log.h $(OutDir)\include\librtmp
 mkdir $(OutDir)\licenses
 copy ..\COPYING $(OutDir)\licenses\rtmp.txt</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if exist $(OutDir)\include\msvc\librtmp (
-rd /s /q $(OutDir)\include\msvc\librtmp
+      <Command>if exist $(OutDir)\include\librtmp (
+rd /s /q $(OutDir)\include\librtmp
 )</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
