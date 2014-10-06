@@ -395,6 +395,7 @@ cd $(ProjectDir)
       <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\bin\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -436,6 +437,7 @@ cd $(ProjectDir)
       <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -795,6 +797,7 @@ cd $(ProjectDir)
       <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\bin\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -848,6 +851,7 @@ cd $(ProjectDir)
       <ProfileGuidedDatabase>$(OutDir)\bin\$(TargetName).pgd</ProfileGuidedDatabase>
       <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
