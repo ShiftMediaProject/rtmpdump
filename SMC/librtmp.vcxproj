@@ -81,8 +81,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{02EB8C66-CEC8-4862-AD01-2CF648DDB433}</ProjectGuid>
-    <RootNamespace>rtmp</RootNamespace>
-    <ProjectName>rtmp</ProjectName>
+    <RootNamespace>librtmp</RootNamespace>
+    <ProjectName>librtmp</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
