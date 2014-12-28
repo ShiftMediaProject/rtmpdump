@@ -151,6 +151,7 @@ static int clk_tck;
 #ifdef CRYPTO
 #include "handshake.h"
 #endif
+#undef _DEBUG
 
 uint32_t
 RTMP_GetTime()
