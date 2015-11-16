@@ -162,7 +162,6 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0'">v120</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLStaticDeps|Win32'" Label="Configuration">
@@ -170,7 +169,6 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0'">v120</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'" Label="Configuration">
@@ -178,7 +176,6 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0'">v120</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLStaticDeps|x64'" Label="Configuration">
@@ -186,7 +183,6 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0'">v120</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -236,73 +232,77 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
-    <TargetName>librtmpd</TargetName>
+    <TargetName>rtmpd</TargetName>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
+    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLStaticDeps|Win32'">
-    <TargetName>librtmpd</TargetName>
+    <TargetName>rtmpd</TargetName>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
+    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
-    <TargetName>librtmpd</TargetName>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <TargetName>rtmpd</TargetName>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLLStaticDeps|x64'">
-    <TargetName>librtmpd</TargetName>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <TargetName>rtmpd</TargetName>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
-    <TargetName>librtmp</TargetName>
+    <TargetName>rtmp</TargetName>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLStaticDeps|Win32'">
-    <TargetName>librtmp</TargetName>
+    <TargetName>rtmp</TargetName>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
-    <TargetName>librtmp</TargetName>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <TargetName>rtmp</TargetName>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLLStaticDeps|x64'">
-    <TargetName>librtmp</TargetName>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <TargetName>rtmp</TargetName>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>librtmpd</TargetName>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>librtmpd</TargetName>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetName>librtmp</TargetName>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseLTO|Win32'">
     <TargetName>librtmp</TargetName>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>librtmp</TargetName>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseLTO|x64'">
     <TargetName>librtmp</TargetName>
-    <OutDir>..\..\..\msvc\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\msvc\</OutDir>
     <IntDir>$(SolutionDir)obj\$(Configuration)\$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -324,7 +324,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzlibd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/ignore:4221,4006 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
@@ -365,7 +365,7 @@ cd $(ProjectDir)
       <TargetMachine>MachineX64</TargetMachine>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzlibd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/ignore:4221,4006 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
@@ -402,12 +402,12 @@ cd $(ProjectDir)
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\bin\x86\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\bin\x86\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\x86\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)\lib\x86\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\x86\$(TargetName).pgd</ProfileGuidedDatabase>
-      <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\bin\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+      <AdditionalDependencies>gnutlsd.lib;hogweedd.lib;nettled.lib;gmpd.lib;zlibd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
@@ -444,11 +444,11 @@ cd $(ProjectDir)
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\bin\x86\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\bin\x86\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\x86\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)\lib\x86\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\x86\$(TargetName).pgd</ProfileGuidedDatabase>
-      <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+      <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzlibd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -486,12 +486,12 @@ cd $(ProjectDir)
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\bin\x64\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\bin\x64\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\x64\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\x64\$(TargetName).pgd</ProfileGuidedDatabase>
-      <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\bin\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+      <AdditionalDependencies>gnutlsd.lib;hogweedd.lib;nettled.lib;gmpd.lib;zlibd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
@@ -527,11 +527,11 @@ cd $(ProjectDir)
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\bin\x64\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\bin\x64\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\x64\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\x64\$(TargetName).pgd</ProfileGuidedDatabase>
-      <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+      <AdditionalDependencies>libgnutlsd.lib;libhogweedd.lib;libnettled.lib;libgmpd.lib;libzlibd.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
@@ -587,7 +587,7 @@ cd $(ProjectDir)
     <Lib>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libzlib.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/ignore:4221,4006 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
@@ -643,7 +643,7 @@ cd $(ProjectDir)
     <Lib>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libzlib.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/ignore:4221,4006 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
@@ -699,7 +699,7 @@ cd $(ProjectDir)
     <Lib>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libzlib.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/ignore:4221,4006 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
@@ -755,7 +755,7 @@ cd $(ProjectDir)
     <Lib>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libzlib.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/ignore:4221,4006 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
@@ -804,12 +804,12 @@ cd $(ProjectDir)
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\bin\x86\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\bin\x86\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\x86\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)\lib\x86\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\x86\$(TargetName).pgd</ProfileGuidedDatabase>
-      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\bin\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+      <AdditionalDependencies>gnutls.lib;hogweed.lib;nettle.lib;gmp.lib;zlib.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <PostBuildEvent>
@@ -857,11 +857,11 @@ cd $(ProjectDir)
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\bin\x86\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\bin\x86\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\x86\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)\lib\x86\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\lib\x86\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\x86\$(TargetName).pgd</ProfileGuidedDatabase>
-      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libzlib.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LargeAddressAware>true</LargeAddressAware>
     </Link>
@@ -910,12 +910,12 @@ cd $(ProjectDir)
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\bin\x64\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\bin\x64\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\x64\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\x64\$(TargetName).pgd</ProfileGuidedDatabase>
-      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(OutDir)\bin\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+      <AdditionalDependencies>gnutls.lib;hogweed.lib;nettle.lib;gmp.lib;zlib.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>mkdir $(OutDir)\include
@@ -962,11 +962,11 @@ cd $(ProjectDir)
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\bin\x64\$(TargetName)$(TargetExt)</OutputFile>
-      <ImportLibrary>$(OutDir)\bin\x64\$(TargetName).lib</ImportLibrary>
-      <ProgramDatabaseFile>$(OutDir)\bin\x64\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)\lib\x64\$(TargetName).lib</ImportLibrary>
+      <ProgramDatabaseFile>$(OutDir)\lib\x64\$(TargetName).pdb</ProgramDatabaseFile>
       <ModuleDefinitionFile>.\librtmp.def</ModuleDefinitionFile>
-      <ProfileGuidedDatabase>$(OutDir)\bin\x64\$(TargetName).pgd</ProfileGuidedDatabase>
-      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libz.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
+      <AdditionalDependencies>libgnutls.lib;libhogweed.lib;libnettle.lib;libgmp.lib;libzlib.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
